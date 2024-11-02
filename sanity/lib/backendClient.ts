@@ -1,6 +1,6 @@
 import { createClient } from 'next-sanity'
 
-import { apiVersion, dataset, projectId } from '../env'
+import { apiVersion, dataset, projectId,apiToken } from '../env'
 
 export const client = createClient({
   projectId,
@@ -12,4 +12,5 @@ export const client = createClient({
       ? `https://${process.env.VERCEL_URL}/studio`
       : `${process.env.NEXT_PUBLIC_BASE_URL}/studio`,
   },
+  token: apiToken,
 });

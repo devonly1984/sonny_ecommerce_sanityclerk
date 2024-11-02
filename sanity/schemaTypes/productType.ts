@@ -3,7 +3,7 @@ import { defineField, defineType } from "sanity";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export const productType = defineType({
-  name: "productType",
+  name: "product",
   title: "Product type",
   type: "document",
   icon: TrolleyIcon,

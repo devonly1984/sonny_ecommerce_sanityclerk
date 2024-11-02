@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-   
-    "shadadd": "npx  --legacy-peer-deps shadcn@latest add"
+    "shadadd": "npx  --legacy-peer-deps shadcn@latest add",
+    "typegen": "npx sanity@latest schema extract && npx sanity@latest typegen generate"
   },
   "packageManager": "npm@10.5.2",
   "overrides": {

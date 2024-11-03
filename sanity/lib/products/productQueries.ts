@@ -17,3 +17,20 @@ const ALL_PRODUCTS_QUERY = defineQuery(`
         return []
     }
 }
+export const searchProductsByName = async(searchParam:string)=>{
+    const PRODUCT_SEARCH_QUERY = defineQuery(`
+        *[_type=='product' && name match $searchParam]|order(name asc)`);
+
+try {
+    const product = await sanityFetch({
+      query: PRODUCT_SEARCH_QUERY,
+      params: {
+        searchParam: `${searchParam}`,
+      },
+    });
+    return product  ? product.data : []
+} catch (error) {
+    console.log(error)
+    return [];
+}
+}

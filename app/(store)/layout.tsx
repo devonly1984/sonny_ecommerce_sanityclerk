@@ -3,6 +3,7 @@ import "../globals.css";
 import { ReactNode } from "react";
 import {ClerkProvider} from '@clerk/nextjs'
 import Header from "@/components/layout/Header";
+import { SanityLive } from "@/sanity/lib/live";
 
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ const RootLayout=({
         <body className="">
           <Header />
           <main>{children}</main>
+          <SanityLive />
         </body>
       </html>
     </ClerkProvider>

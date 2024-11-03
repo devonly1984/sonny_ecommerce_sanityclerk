@@ -1,6 +1,6 @@
 import ProductsView from "@/components/product/ProductsView";
-import { getAllCategories } from "@/sanity/lib/queries/categoryQueries";
-import { getAllProducts } from "@/sanity/lib/queries/productQueries";
+import { getAllCategories } from "@/sanity/lib/category/categoryQueries";
+import { getAllProducts } from "@/sanity/lib/products/productQueries";
 
 const Home = async () => {
   const products = await getAllProducts();

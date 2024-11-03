@@ -6,6 +6,7 @@ interface ProductsViewProps {
   categories: Category[]
 }
 const ProductsView = ({ products, categories }: ProductsViewProps) => {
+  console.log(categories);
   return (
     <div>
       {/**categories */}

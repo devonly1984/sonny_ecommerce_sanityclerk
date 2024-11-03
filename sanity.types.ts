@@ -280,7 +280,7 @@ export type SanityImageMetadata = {
 
 export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Order | Product | Sale | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
-// Source: ./sanity/lib/queries/categoryQueries.ts
+// Source: ./sanity/lib/products/categoryQueries.ts
 // Variable: GET_ALL_CATEGORIES
 // Query: *[_type=='category']|order(name asc)
 export type GET_ALL_CATEGORIESResult = Array<{
@@ -294,7 +294,7 @@ export type GET_ALL_CATEGORIESResult = Array<{
   description?: string;
 }>;
 
-// Source: ./sanity/lib/queries/productQueries.ts
+// Source: ./sanity/lib/products/productQueries.ts
 // Variable: ALL_PRODUCTS_QUERY
 // Query: *[_type=='product'] | order(name asc)
 export type ALL_PRODUCTS_QUERYResult = Array<{

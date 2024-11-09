@@ -42,7 +42,7 @@ const BasketPage = () => {
           clerkUserId: user!.id,
         };
         const checkoutUrl = await createCheckoutSession(groupedItems,metadata);
-        if (checkoutUrl) {
+        if (checkoutUrl) { 
             window.location.href=checkoutUrl;
         }
 

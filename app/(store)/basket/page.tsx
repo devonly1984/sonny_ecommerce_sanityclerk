@@ -9,6 +9,7 @@ import { imageUrl } from "@/lib/imageUrl";
 import Loader from "@/components/loaders/Loader";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "@/lib/types";
+import { createCheckoutSession } from "@/actions/checkout.actions";
 
 
 const BasketPage = () => {

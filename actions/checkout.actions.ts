@@ -9,6 +9,7 @@ export const createCheckoutSession = async (
   metadata: Metadata
 ) => {
   let stub;
+  let customerId: string | undefined;
   try {
     const itemsWithoutPrice = items.filter((item) => !item.product.price);
     if (itemsWithoutPrice.length > 0) {
@@ -18,15 +19,19 @@ export const createCheckoutSession = async (
       email: metadata.customerEmail,
       limit: 1,
     });
-    let customerId: string | undefined;
+   
+    
     if (customers.data.length > 0) {
       customerId = customers.data[0].id;
     }
+
     if (process.env.NODE_ENV ==='production') {
       stub = `https://${process.env.VERCEL_URL}`
     } else {
       stub = process.env.NEXT_PUBLIC_BASE_URL
     }
+
+
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
       customer_creation: customerId ? undefined : "always",
@@ -34,7 +39,7 @@ export const createCheckoutSession = async (
       mode: "payment",
       allow_promotion_codes: true,
       success_url: `${stub}/success?session_id={CHECKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber}`,
-      cancel_url: `https://${process.env.VERCEL_URL || process.env.NEXT_PUBLIC_BASE_URL}/basket`,
+      cancel_url: `${stub}/basket`,
       line_items: items.map((item) => ({
         price_data: {
           currency: "usd",

@@ -2,7 +2,7 @@ import { TrolleyIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export const productType = defineType({
+export const product = defineType({
   name: "product",
   title: "Product type",
   type: "document",
